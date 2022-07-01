@@ -1,0 +1,29 @@
+From 7305b3f2ce78983fcfbb458a805adc69020bfb0a Mon Sep 17 00:00:00 2001
+From: Jianjun Zhu <jianjun.zhu@intel.com>
+Date: Fri, 1 Jul 2022 10:56:38 +0800
+Subject: [PATCH] Update visibility for gtest.
+
+---
+ googletest/BUILD.gn | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/googletest/BUILD.gn b/googletest/BUILD.gn
+index e9b39c2968a..5bcc23e044d 100644
+--- a/googletest/BUILD.gn
++++ b/googletest/BUILD.gn
+@@ -5,7 +5,11 @@
+ import("//build_overrides/build.gni")
+ 
+ config("gtest_config") {
+-  visibility = [ ":*" ]  # gmock also shares this config.
++  visibility = [
++    ":*",
++    "//testing/gmock:gmock",
++    "//third_party/webrtc/test:test_support",
++  ]  # gmock also shares this config.
+ 
+   defines = [
+     # Chromium always links googletest statically, so no API qualifier is
+-- 
+2.36.1
+

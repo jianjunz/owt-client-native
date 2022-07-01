@@ -42,6 +42,7 @@ patchList = [
     ('0008-Disable-loop-range-analysis-when-build-with-Xcode-cl.patch', BUILD_PATH),
     ('0009-Export-WebRTC-symbols-on-iOS.patch', BUILD_PATH),
     ('0010-Restore-is_ash-for-backward-compatible.patch', BUILD_PATH),
+    ('0011-Update-visibility-for-gtest.patch', THIRD_PARTY_PATH),
     ('0013-Remove-unused-gni-for-av1-build.patch', THIRD_PARTY_PATH),
     ('0014-Fix-missing-ffmpeg-configure-item-for-msvc-build.patch', FFMPEG_PATH),
     ('0015-Remove-custom-d8-dependency.patch', BUILD_PATH),
