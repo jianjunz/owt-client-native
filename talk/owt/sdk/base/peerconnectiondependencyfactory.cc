@@ -207,8 +207,6 @@ void PeerConnectionDependencyFactory::
 #if defined(OWT_USE_MSDK) || defined(OWT_USE_FFMPEG)
 #if defined(WEBRTC_WIN)
     decoder_factory.reset(new ExternalVideoDecoderFactory(nullptr));
-#else
-    decoder_factory.reset(new ExternalVideoDecoderFactory());
 #endif
 #else
     decoder_factory = webrtc::CreateBuiltinVideoDecoderFactory();
